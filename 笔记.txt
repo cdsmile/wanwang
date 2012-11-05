@@ -1,0 +1,264 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://maps.googleapis.com/maps/api/place/details/json?reference=CnRmAAAAP38Y_6nbBQNXje1N_cG4xwoOQtgfEt50aJYRbflAiVCDdNvKEPBw9kEfYShyGQcQNYNGXqfj7nSa7Qmzd_yMJP0sZc0X9izYRjRkZHcsj_6Xi1FazS5Sb9zcr89Qzmd_WE1_K6xRfQqocsHO0gcNkBIQsdfV3S6NAcMYsBOTp1nPzhoUwB82nVn7lTznp5k3UTnnVzwgH1I&sensor=true&key=AIzaSyDnOLc9HSq_twLQFRyA18E6beAOSs4r368
+
+
+
+
+AIzaSyDnOLc9HSq_twLQFRyA18E6beAOSs4r368
+
+
+
+https://maps.googleapis.com/maps/api/place/search/json?location=-33.8670522,151.1957362&radius=500&sensor=false&key=AIzaSyDnOLc9HSq_twLQFRyA18E6beAOSs4r368
+
+
+https://maps.googleapis.com/maps/api/place/search/json?location=-33.8670522,151.1957362&radius=500&types=food&sensor=false&key=AIzaSyDnOLc9HSq_twLQFRyA18E6beAOSs4r368
+
+
+
+
+
+
+
+
+
+
+*****************************************************************************
+UIsegement
+*****************************************************************************
+
+segement.apportionsSegmentWidthsByContent=YES;     //每个按钮随内容而自由分配大小
+
+
+*****************************************************************************
+UIView
+*****************************************************************************
+ /*----------------子视图随着super视图的变化而变化的方式----------------*/ 
+view2.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+
+
+
+
+
+
+*****************************************************************************
+UIButton
+*****************************************************************************
+
+ /*----------------点击按钮 闪光----------------*/ 
+    btn.showsTouchWhenHighlighted=YES;   //默认是no;
+
+
+
+
+
+
+
+*****************************************************************************
+UITextfield
+*****************************************************************************
+ /*----------------输入框不弹出键盘以及其他互动----------------*/ 
+self.textfield.userInteractionEnabled=NO   
+
+ /*----------------UITextfield居中设置----------------*/ 
+resultTemp.contentVerticalAlignment =UIControlContentVerticalAlignmentCenter;
+ // 内容在textfield 上下居中情况;   Vertical:垂直
+resultTemp.textAlignment = UITextAlignmentRight;
+//内容在textfield 左右居中情况;
+
+
+
+
+
+*****************************************************************************
+NSString
+*****************************************************************************
+  
+ /*----------------改变字符串的大小写----------------*/ 
+  NSLog(@"string1:%@",[string1 uppercaseString]);//大写
+    NSLog(@"string2:%@",[string2 lowercaseString]);//小写
+    NSLog(@"string2:%@",[string2 capitalizedString]);//首字母大小
+
+
+
+ /*----------------在串中搜索子串----------------*/ 
+  NSRange range = [string1 rangeOfString:string2];
+
+
+
+/*----------------抽取子串 ----------------*/        
+ //-substringToIndex: 从字符串的开头一直截取到指定的位置，但不包括该位置的字符
+NSString *string2 = [string1 substringToIndex:3];
+
+//-substringFromIndex: 以指定位置开始（包括指定位置的字符），并包括之后的全部字符
+NSString *string2 = [string1 substringFromIndex:3];
+
+ //-substringWithRange: //按照所给出的位置，长度，任意地从字符串中截取子串
+NSString *string2 = [string1 substringWithRange:NSMakeRange(0, 4)];
+
+//扩展路径
+ 
+ NSString *Path = @"~/NSData.txt";
+ NSString *absolutePath = [Path stringByExpandingTildeInPath];//扩展波浪线路径
+ NSLog(@"absolutePath:%@",absolutePath);
+ NSLog(@"Path:%@",[absolutePath stringByAbbreviatingWithTildeInPath]);//简写波浪线路径
+
+   //文件扩展名
+    NSString *Path = @"~/NSData.txt";
+    NSLog(@"Extension:%@",[Path pathExtension]);
+
+
+
+
+**************************************************************************
+     NSMutableString
+     *****************************************************************************
+
+  /*---------------给字符串分配容量----------------*/
+    //stringWithCapacity:
+   
+    String = [NSMutableString stringWithCapacity:40];
+
+
+  /*--------在已有字符串中按照所给出范围和长度删除字符------*/   
+ [String1 deleteCharactersInRange:NSMakeRange(0, 5)];
+
+
+ /*--------在已有字符串后面在所指定的位置中插入给出的字符串------*/
+[String1 insertString:@"Hi! " atIndex:0];
+
+
+ /*--------将已有的空符串换成其它的字符串------*/
+ [String1 setString:@"Hello Word!"];
+
+
+ /*--------按照所给出的范围，和字符串替换的原有的字符------*/
+ [String1 replaceCharactersInRange:NSMakeRange(0, 4) withString:@"That"];
+
+
+  /*-------------判断字符串内是否还包含别的字符串(前缀，后缀)-------------*/
+    //01：检查字符串是否以另一个字符串开头- (BOOL) hasPrefix: (NSString *) aString;
+    NSString *String1 = @"NSStringInformation.txt";
+    [String1 hasPrefix:@"NSString"] = = 1 ?  NSLog(@"YES") : NSLog(@"NO");
+    [String1 hasSuffix:@".txt"] = = 1 ?  NSLog(@"YES") : NSLog(@"NO");
+
+
+
+*****************************************************************************
+  NSArray
+*****************************************************************************
+ 
+
+ /*---------------------------创建数组------------------------------*/
+    //NSArray *array = [[NSArray alloc] initWithObjects:
+    @"One",@"Two",@"Three",@"Four",nil];
+
+    //- (unsigned) Count;数组所包含对象个数；
+    NSLog(@"self.dataArray cound:%d",[self.dataArray count]);
+
+    //- (id) objectAtIndex: (unsigned int) index;获取指定索引处的对象;
+    NSLog(@"self.dataArray cound 2:%@",[self.dataArray objectAtIndex:2]);
+
+
+
+/*-------------从一个数组拷贝数据到另一数组(可变数级)----------------------*/
+	array1 = [NSArray arrayWithArray:array];
+
+//copy
+        for(int i = 0; i < [oldArray count]; i++)
+    {        
+        obj = [[oldArray objectAtIndex:i] copy];
+        [newArray addObject: obj];
+    }
+
+//枚举		
+	for(id obj in oldArray)
+    {
+        [newArray addObject: obj];
+    }
+//deep copy
+
+
+  /*---------------------------切分数组------------------------------*/
+
+//从字符串分割到数组－ componentsSeparatedByString:
+ NSString *string = [[NSString alloc] initWithString:@"One,Two,Three,Four"];
+    NSLog(@"string:%@",string);    
+    NSArray *array = [string componentsSeparatedByString:@","];
+    NSLog(@"array:%@",array);
+    [string release];
+
+   //从数组合并元素到字符串- componentsJoinedByString:
+    NSArray *array = [[NSArray alloc] initWithObjects:@"One",@"Two",@"Three",@"Four",nil];
+    NSString *string = [array componentsJoinedByString:@","];
+    NSLog(@"string:%@",string);
+ 
+*****************************************************************************
+    NSMutableArray
+*****************************************************************************
+ /*---------------给数组分配容量----------------*/
+    //NSArray *array;
+    array = [NSMutableArray arrayWithCapacity:20];
+
+  /*--------------在数组末尾添加对象----------------*/
+    //- (void) addObject: (id) anObject;
+ 
+/*--------------删除数组中指定索引处对象----------------*/    
+    //-(void) removeObjectAtIndex: (unsigned) index; 
+
+   
+*****************************************************************************
+ NSDictionary
+*****************************************************************************
+
+/*--------------------------------创建字典-------------------------------*/
+
+//- (id) initWithObjectsAndKeys;
+ 
+NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"One",@"1",@"Two",@"2",@"Three",@"3",nil];
+
+
+*****************************************************************************
+ NSMutableDictionary
+*****************************************************************************
+
+/*---------------------------创建可变字典------------------------*/    
+    //创建
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+
+ //添加字典
+    [dictionary setObject:@"One" forKey:@"1"];
+ //删除指定的字典
+    [dictionary removeObjectForKey:@"3"];
+
+
+
+*****************************************************************************
+NSValue（对任何对象进行包装）
+*****************************************************************************
+
+ //将NSRect放入NSArray中
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSValue *value;
+    CGRect rect = CGRectMake(0, 0, 320, 480);    
+    value = [NSValue valueWithBytes:&rect objCType:@encode(CGRect)];
+    [array addObject:value];
+    NSLog(@"array:%@",array);
+ 
+ //从Array中提取
+    value = [array objectAtIndex:0];
+    [value getValue:&rect];
+    NSLog(@"value:%@",value);
+
+
