@@ -13,6 +13,10 @@
 		0FA335611647954C00306EB5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FA3355F1647954C00306EB5 /* InfoPlist.strings */; };
 		0FA335631647954C00306EB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA335621647954C00306EB5 /* main.m */; };
 		0FA335671647954C00306EB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA335661647954C00306EB5 /* AppDelegate.m */; };
+		0FDAEA171648A215006ECDD2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDAEA161648A215006ECDD2 /* MainViewController.m */; };
+		0FDAEA1E1648A2DC006ECDD2 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDAEA1D1648A2DC006ECDD2 /* AwesomeMenu.m */; };
+		0FDAEA211648A35E006ECDD2 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDAEA201648A35E006ECDD2 /* AwesomeMenuItem.m */; };
+		0FDAEA231648A495006ECDD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDAEA221648A495006ECDD2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		0FA335641647954C00306EB5 /* wanwang-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wanwang-Prefix.pch"; sourceTree = "<group>"; };
 		0FA335651647954C00306EB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0FA335661647954C00306EB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0FDAEA151648A215006ECDD2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0FDAEA161648A215006ECDD2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0FDAEA1C1648A2DC006ECDD2 /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
+		0FDAEA1D1648A2DC006ECDD2 /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
+		0FDAEA1F1648A35E006ECDD2 /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
+		0FDAEA201648A35E006ECDD2 /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		0FDAEA221648A495006ECDD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FDAEA231648A495006ECDD2 /* QuartzCore.framework in Frameworks */,
 				0FA335571647954C00306EB5 /* UIKit.framework in Frameworks */,
 				0FA335591647954C00306EB5 /* Foundation.framework in Frameworks */,
 				0FA3355B1647954C00306EB5 /* CoreGraphics.framework in Frameworks */,
@@ -42,6 +54,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F69B5331647E2E00084C734 /* 素材 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "素材";
+			sourceTree = "<group>";
+		};
 		0FA335471647954C00306EB5 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +81,7 @@
 		0FA335551647954C00306EB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FDAEA221648A495006ECDD2 /* QuartzCore.framework */,
 				0FA335561647954C00306EB5 /* UIKit.framework */,
 				0FA335581647954C00306EB5 /* Foundation.framework */,
 				0FA3355A1647954C00306EB5 /* CoreGraphics.framework */,
@@ -72,8 +92,10 @@
 		0FA3355C1647954C00306EB5 /* wanwang */ = {
 			isa = PBXGroup;
 			children = (
+				0FDAEA181648A22C006ECDD2 /* Controller */,
 				0FA335651647954C00306EB5 /* AppDelegate.h */,
 				0FA335661647954C00306EB5 /* AppDelegate.m */,
+				0F69B5331647E2E00084C734 /* 素材 */,
 				0FA3355D1647954C00306EB5 /* Supporting Files */,
 			);
 			path = wanwang;
@@ -88,6 +110,19 @@
 				0FA335641647954C00306EB5 /* wanwang-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0FDAEA181648A22C006ECDD2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0FDAEA151648A215006ECDD2 /* MainViewController.h */,
+				0FDAEA161648A215006ECDD2 /* MainViewController.m */,
+				0FDAEA1C1648A2DC006ECDD2 /* AwesomeMenu.h */,
+				0FDAEA1D1648A2DC006ECDD2 /* AwesomeMenu.m */,
+				0FDAEA1F1648A35E006ECDD2 /* AwesomeMenuItem.h */,
+				0FDAEA201648A35E006ECDD2 /* AwesomeMenuItem.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +188,9 @@
 			files = (
 				0FA335631647954C00306EB5 /* main.m in Sources */,
 				0FA335671647954C00306EB5 /* AppDelegate.m in Sources */,
+				0FDAEA171648A215006ECDD2 /* MainViewController.m in Sources */,
+				0FDAEA1E1648A2DC006ECDD2 /* AwesomeMenu.m in Sources */,
+				0FDAEA211648A35E006ECDD2 /* AwesomeMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +292,7 @@
 				0FA3356C1647954C00306EB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
